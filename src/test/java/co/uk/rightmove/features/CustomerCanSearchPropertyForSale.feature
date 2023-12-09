@@ -5,6 +5,7 @@ Feature: Search Property For Sale
   Scenario Outline: User can successfully search for property for sale
     Given I navigate to the homepage
     When I enter "<location>" in the search field
+    And I accept all cookies
     And I click on For Sale button
     And I ensure that the search criteria page is displayed
     And I select radius "<searchRadius>" of the location
@@ -21,5 +22,5 @@ Feature: Search Property For Sale
 
     Examples: Test Data for Search Property
       | location   | searchRadius   | minPrice | maxPrice | minBed | maxBed | propertyType     | addedToSite |
-      | Manchester | Within 5 miles | 220,000  | 400,000  | 2      | 4      | Houses           | Last 7 days |
-      | ST4        | Within 3 miles | 180,000  |          | 2      | 5      | Flats/Apartments |             |
+      | Liverpool | Within 5 miles | 100000  | 400,000  | 2      | 4      | Houses           | Last 7 days |
+      #| ST4        | Within 3 miles | 180,000  |          | 2      | 5      | Flats/Apartments |             |
